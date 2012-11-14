@@ -3,7 +3,7 @@
 
 (function() {
 	var portalElement = $('[data-portal="project"]');
-	var projectId = portalElement.attr('data-project');
+	var project = portalElement.attr('data-project');
 	
 	// Test Code
 	var server = sinon.fakeServer.create();
