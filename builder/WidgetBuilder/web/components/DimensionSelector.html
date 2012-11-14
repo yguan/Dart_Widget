@@ -16,18 +16,18 @@
 	        <div class="size-box"></div>
 	      </div>
       </div>
-      <div>{{count}} {{target}}</div>
+      <div>{{model.count}} {{target}}</div>
     </template>
     <script type="application/dart">
       import 'package:web_components/web_component.dart';
+      import '../WidgetBuilder.dart';
 
       class DimensionSelector extends WebComponent {
-        int count = 0;
-        int x = 0;
-        int y = 0;
+        SnippetModel model;
+
         var target = "";
         void increment(e) {
-          count++;
+          model.count++;
           target = getTargetId(e);
         }
 
