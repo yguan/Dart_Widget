@@ -1,4 +1,4 @@
-#library("WidgetSnippetGenerator")
+library WidgetSnippetGenerator;
 
 class WidgetSnippetGenerator {
   String snippetBase = '<div data-portal="project" data-project="SomeProject" data-height="{{height}}" data-width="{{width}}"></div>';
