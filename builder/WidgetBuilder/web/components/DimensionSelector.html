@@ -16,7 +16,7 @@
 	        <div class="size-box"></div>
 	      </div>
       </div>
-      <div>{{count}} {{target}} ({{x}},{{y}})</div>
+      <div>{{count}} {{target}}</div>
     </template>
     <script type="application/dart">
       import 'package:web_components/web_component.dart';
@@ -28,18 +28,19 @@
         var target = "";
         void increment(e) {
           count++;
-          x = e.x;
-          y = e.y;
-          
-          target = "nodata";
-          if(!e.target.nodes.isEmpty) {
-           if(e.target.attributes['data-id'] != null) {
-				      target = e.target.attributes['data-id'];
-				    }
-				    else if(e.target.parent.attributes['data-id'] != null) {
-				      target = e.target.parent.attributes['data-id'];
-				    }
-				   }
+          target = getTargetId(e);
+        }
+
+        String getTargetId(e) {
+          var target = e.target;
+          if(!target.nodes.isEmpty) {
+           if(target.attributes['data-id'] != null) {
+              return target.attributes['data-id'];
+            }
+            else if(target.parent.attributes['data-id'] != null) {
+              return target.parent.attributes['data-id'];
+            }
+           }
         }
       }
     </script>
