@@ -1,5 +1,5 @@
 library WidgetBuilder;
-part 'SnippetModel.dart';
 
-
+part "WidgetSnippetGenerator.dart";
+part "SnippetModel.dart";
 

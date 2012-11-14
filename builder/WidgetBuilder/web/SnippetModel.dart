@@ -5,8 +5,10 @@ class SnippetModel {
   num height;
 
   String script() {
-    return "width: $width height: $height";
+    return _snippetGenerator.createSnippet(width, height);
   }
 
-  SnippetModel(this.width, this.height);
+  SnippetModel(this._snippetGenerator);
+
+  WidgetSnippetGenerator _snippetGenerator;
 }
