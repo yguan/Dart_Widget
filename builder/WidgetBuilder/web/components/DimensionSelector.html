@@ -3,30 +3,43 @@
   <element name="d-dimension-selector" constructor="DimensionSelector" extends="div">
     <template>
       <div data-action="click:increment">
-	      <div class="size1 js-size1">
-	        <label>320 x 200</label>
+	      <div class="size1" data-id="size1">
+	        <label class="size-label">320 x 200</label>
 	        <div class="size-box"></div>
 	      </div>
-	      <div class="size2 js-size2">
-	        <label>420 x 300</label>
+	      <div class="size2" data-id="size2">
+	        <label class="size-label">420 x 300</label>
 	        <div class="size-box"></div>
 	      </div>
-	      <div class="size3 js-size3">
-	        <label>520 x 400</label>
+	      <div class="size3" data-id="size3">
+	        <label class="size-label">520 x 400</label>
 	        <div class="size-box"></div>
 	      </div>
       </div>
-      <div>{{count}} {{target}}</div>
+      <div>{{count}} {{target}} ({{x}},{{y}})</div>
     </template>
     <script type="application/dart">
       import 'package:web_components/web_component.dart';
 
       class DimensionSelector extends WebComponent {
         int count = 0;
+        int x = 0;
+        int y = 0;
         var target = "";
         void increment(e) {
           count++;
-          target = e;
+          x = e.x;
+          y = e.y;
+          
+          target = "nodata";
+          if(!e.target.nodes.isEmpty) {
+           if(e.target.attributes['data-id'] != null) {
+				      target = e.target.attributes['data-id'];
+				    }
+				    else if(e.target.parent.attributes['data-id'] != null) {
+				      target = e.target.parent.attributes['data-id'];
+				    }
+				   }
         }
       }
     </script>
