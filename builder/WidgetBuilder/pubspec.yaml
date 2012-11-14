@@ -1,0 +1,8 @@
+name:  WidgetBuilder
+description:  A sample application
+
+#dependencies:
+#  unittest: { sdk: unittest }
+
+dependencies:
+  web_components: any

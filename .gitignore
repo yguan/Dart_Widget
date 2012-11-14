@@ -161,3 +161,11 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+#Dart
+*.lock
+**/WidgetBuilder/**/out
+**/WidgetBuilder/packages
+**/WidgetBuilder/**/packages
+**/DartWidgetBuilder
+
