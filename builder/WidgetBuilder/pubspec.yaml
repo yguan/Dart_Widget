@@ -6,3 +6,5 @@ description:  A sample application
 
 dependencies:
   web_components: any
+  synth:
+    git: git://github.com/maiah/synth.git
