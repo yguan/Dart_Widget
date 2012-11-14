@@ -3,9 +3,10 @@ part of WidgetBuilder;
 class SnippetModel {
   num width;
   num height;
-  num count;
+
   String script() {
-    return "winner $count";
+    return "width: $width height: $height";
   }
-  SnippetModel(this.width, this.height, this.count);
+
+  SnippetModel(this.width, this.height);
 }
