@@ -6,13 +6,23 @@
     <title>App</title>
  <!--   <link rel="stylesheet" href="App.css"> -->
     <link rel="components" href="components/DimensionSelector.html">
+    <link rel="components" href="components/WidgetSnippetOutput.html">
   </head>
   <body>
     <h1>Widget Builder Test App</h1>
 
-    <div is="d-dimension-selector"></div>
+    <div is="d-dimension-selector" data-value="model: model"></div>
 
-    <script type="application/dart">main() {}</script>
+    <div style="width:100px; height:100px;"></div>
+
+    <div is="d-widget-snippet-output" data-value="model: model"></div>
+
+    <script type="application/dart">
+      import 'WidgetBuilder.dart';
+
+      var model = new SnippetModel(0,0,0);
+      main() {}
+    </script>
     <script src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
   </body>
 </html>

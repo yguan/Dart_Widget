@@ -1,0 +1,17 @@
+<html>
+  <body>
+  <element name="d-widget-snippet-output" constructor="WidgetSnippetOutput" extends="div">
+    <template>
+      <textarea class="widget-snippet-output">{{model.script()}}</textarea>
+    </template>
+    <script type="application/dart">
+      import 'package:web_components/web_component.dart';
+      import '../WidgetBuilder.dart';
+
+      class WidgetSnippetOutput extends WebComponent {
+        SnippetModel model;
+      }
+    </script>
+  </element>
+  </body>
+</html>
