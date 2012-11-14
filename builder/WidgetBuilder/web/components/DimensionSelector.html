@@ -2,7 +2,7 @@
   <body>
   <element name="d-dimension-selector" constructor="DimensionSelector" extends="div">
     <template>
-      <div data-action="click:increment">
+      <div data-action="click:updateModel">
 	      <div class="size1" data-id="size1">
 	        <label class="size-label">320 x 200</label>
 	        <div class="size-box"></div>
@@ -16,7 +16,11 @@
 	        <div class="size-box"></div>
 	      </div>
       </div>
-      <div>{{model.count}} {{target}}</div>
+      <div>
+        <label>Selected Dimension</label>
+        <div>width: {{model.width}} height: {{model.height}}</div>
+      </div>
+
     </template>
     <script type="application/dart">
       import 'package:web_components/web_component.dart';
@@ -25,10 +29,28 @@
       class DimensionSelector extends WebComponent {
         SnippetModel model;
 
-        var target = "";
-        void increment(e) {
-          model.count++;
-          target = getTargetId(e);
+        void updateModel(e) {
+          var targetId = getTargetId(e);
+          var width = 0;
+          var height = 0;
+
+          switch(targetId) {
+            case "size1":
+              width = 320;
+              height = 200;
+              break;
+            case "size2":
+              width = 420;
+              height = 300;
+              break;
+            case "size3":
+            default:
+              width = 520;
+              height = 400;
+              break;
+          }
+          model.width = width;
+          model.height = height;
         }
 
         String getTargetId(e) {
