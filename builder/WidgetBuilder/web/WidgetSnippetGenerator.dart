@@ -8,18 +8,18 @@ class WidgetSnippetGenerator {
          var js, id = 'widget', ref = d.getElementsByTagName('script')[0];
          if (d.getElementById(id)) {return;}
          js = d.createElement('script'); js.id = id; js.async = true;
-         js.src = "widget-embedder.js";
+         js.src = "http://localhost:8080/widget-embedder";
          ref.parentNode.insertBefore(js, ref);
          }(document));
    </script>
-   """;   
+   """;
   var snippetBase = '<div data-portal="project" data-project="SomeProject" data-height="{{height}}" data-width="{{width}}"></div>';
-  
+
   String createSnippet(int height, int width) {
     var divSnippet = this.snippetBase
         .replaceAll('{{height}}', height.toString())
         .replaceAll('{{width}}', width.toString());
-    
+
     return widgetEmbbederTag.concat(divSnippet);
   }
 }
