@@ -1,8 +1,8 @@
 part of WidgetBuilder;
 
 class SnippetModel {
-  num width;
-  num height;
+  num width = 0;
+  num height = 0;
 
   String script() {
     return _snippetGenerator.createSnippet(width, height);
