@@ -8,9 +8,15 @@ main () {
     res.write('''
         (function() {
           var portalElement = \$('[data-portal="project"]');
-          var project = portalElement.attr('data-project');
+          var height = portalElement.attr('data-height');
+          var width = portalElement.attr('data-width');
         
-          portalElement.append("<h1>Hello</h1>"); 
+          \$.get('http://jreynolds-w7e.hq.daptiv.com/rootApi/hackday/sharedprojectitem?viewid=2B1BDB19-9B13-4B77-9288-1886120EAEC2',
+              function(data){
+                var stringthing = '<tr><th colspan="2">' + data.Project.Title + '</th><tr>';
+                for(prop in data.ProjectStatus ) { stringthing += '<tr><td>' + prop + ':</td><td> ' + data.ProjectStatus[prop] + '</td></tr>'; };
+                portalElement.append("<div style='overflow:auto;border: 1px solid black; width:"+ width + "px; height:" + height + "px;'><table>" + stringthing + "</table></div>"); 
+            });
         })();
       ''');
     });
