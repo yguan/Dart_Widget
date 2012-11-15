@@ -21,4 +21,5 @@ class WidgetSnippetGenerator {
         .replaceAll('{{width}}', width.toString());
     
     return widgetEmbbederTag.concat(divSnippet);
+  }
 }
