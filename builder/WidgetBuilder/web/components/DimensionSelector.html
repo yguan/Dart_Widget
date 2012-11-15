@@ -3,20 +3,21 @@
   <element name="d-dimension-selector" constructor="DimensionSelector" extends="div">
     <template>
       <div data-action="click:updateModel">
-	      <div class="size1" data-id="size1">
+	      <div class="size size1" data-id="size1">
 	        <label class="size-label">320 x 200</label>
 	        <div class="size-box"></div>
 	      </div>
-	      <div class="size2" data-id="size2">
+	      <div class="size size2" data-id="size2">
 	        <label class="size-label">420 x 300</label>
 	        <div class="size-box"></div>
 	      </div>
-	      <div class="size3" data-id="size3">
+	      <div class="size size3" data-id="size3">
 	        <label class="size-label">520 x 400</label>
 	        <div class="size-box"></div>
 	      </div>
       </div>
-      <div>
+      <br/>
+      <div class="selected-dimension">
         <label>Selected Dimension</label>
         <div>width: {{model.width}} height: {{model.height}}</div>
       </div>
@@ -31,8 +32,8 @@
 
         void updateModel(e) {
           var targetId = getTargetId(e);
-          var width = 0;
-          var height = 0;
+          var width = model.width;
+          var height = model.height;
 
           switch(targetId) {
             case "size1":
@@ -44,7 +45,6 @@
               height = 300;
               break;
             case "size3":
-            default:
               width = 520;
               height = 400;
               break;
@@ -55,15 +55,13 @@
 
         String getTargetId(e) {
           var target = e.target;
-          if(!target.nodes.isEmpty) {
-           if(target.attributes['data-id'] != null) {
-              return target.attributes['data-id'];
-            }
-            else if(target.parent.attributes['data-id'] != null) {
-              return target.parent.attributes['data-id'];
-            }
-           }
-        }
+			    if(target.attributes['data-id'] != null) {
+			      return target.attributes['data-id'];
+			    }
+			    else if(target.parent.attributes['data-id'] != null) {
+			      return target.parent.attributes['data-id'];
+			    }
+			   }
       }
     </script>
   </element>
