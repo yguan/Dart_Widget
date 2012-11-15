@@ -22,6 +22,7 @@
     .size:hover {
         border: 1px solid #999;
         border-radius: 5px;
+        background-color: #eee;
     }
 
     .size-box {
