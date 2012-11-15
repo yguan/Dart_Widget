@@ -55,3 +55,7 @@
     #code-snippet, #size-selector, #selected-dimension {
         margin-top: 20px;
     }
+
+    .highlight {
+        background-color: yellow;
+    }
