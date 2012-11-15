@@ -1,0 +1,57 @@
+    #code-snippet textarea {
+        width: 100%;
+        height: 50px;
+
+    }
+
+    #generator-container {
+        border: 1px solid #999;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 30px 40px;
+    }
+
+    .size {
+        display: inline-block;
+        margin: 0 15px;
+        padding: 10px;
+        text-align: center;
+        width: 100px;
+        border: 1px solid #fff;
+    }
+
+    .size:hover {
+        border: 1px solid #999;
+        border-radius: 5px;
+    }
+
+    .size-box {
+        display: inline-block;
+        background-color: #999;
+        border: 1px solid #555;
+
+    }
+
+    .size1 .size-box {
+        width: 32px;
+        height: 20px;
+    }
+
+    .size2 .size-box {
+        width: 42px;
+        height: 30px;
+    }
+
+    .size3 .size-box {
+        width: 52px;
+        height: 40px;
+    }
+
+    #code-snippet > label, #size-selector > label, #selected-dimension > label, .selected-dimension > label {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    #code-snippet, #size-selector, #selected-dimension {
+        margin-top: 20px;
+    }

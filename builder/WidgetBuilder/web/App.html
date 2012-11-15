@@ -4,19 +4,26 @@
   <head>
     <meta charset="utf-8">
     <title>App</title>
- <!--   <link rel="stylesheet" href="App.css"> -->
+    <link rel="stylesheet" href="App.css">
     <link rel="components" href="components/DimensionSelector.html">
     <link rel="components" href="components/WidgetSnippetOutput.html">
   </head>
   <body>
     <h1>Widget Builder Test App</h1>
 
-    <div is="d-dimension-selector" data-value="model: model"></div>
+    <div id="generator-container">
 
-    <div style="width:100px; height:100px;"></div>
+      <div id="size-selector">
+        <label>Size Selector:</label>
+	      <div is="d-dimension-selector" data-value="model: model"></div>
+	    </div>
+      <br/>
+      <div id="code-snippet">
+        <label>Code Snippet:</label>
+	      <div is="d-widget-snippet-output" data-value="model: model"></div>
+	    </div>
 
-    <div is="d-widget-snippet-output" data-value="model: model"></div>
-
+    </div>
     <script type="application/dart">
       import 'WidgetBuilder.dart';
 
