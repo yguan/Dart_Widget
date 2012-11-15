@@ -1,6 +1,11 @@
 part of WidgetBuilder;
 
-class SnippetModel {
+class IDimension {
+  num width;
+  num height;
+}
+
+class SnippetModel implements IDimension {
   num width = 0;
   num height = 0;
 
